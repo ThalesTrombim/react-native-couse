@@ -1,14 +1,17 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 type Props = {
-  value: string 
+  value: string;
+  onDelete: () => void;
 }
 
 export default function GoalItem(props: Props) {
   return (
-    <View>
-      <Text style={styles.listItem}>{props.value}</Text>
-    </View>
+    <TouchableOpacity activeOpacity={.9} onPress={props.onDelete}>
+      <View>
+        <Text style={styles.listItem}>{props.value}</Text>
+      </View>
+    </TouchableOpacity>
   )
 }
 
